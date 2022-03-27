@@ -29,7 +29,7 @@ class Convertor:
     def help(self):
         print("You asked for help")
         get_help = Help()
-        get_help.help_text.configure(text"Help text goes here")
+        get_help.help_text.configure(text="Help text goes here")
 
 # main routine
 if __name__ == "__main__":

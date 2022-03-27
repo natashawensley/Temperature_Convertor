@@ -1,5 +1,5 @@
 from tkinter import *
-
+from functools import partial  # To prevent unwanted windows
 
 class Convertor:
     def __int__(self):
@@ -28,12 +28,17 @@ class Convertor:
 
     def help(self):
         print("You asked for help")
-        get_help = Help()
+        get_help = Help(self)
         get_help.help_text.configure(text="Help text goes here")
 
+
+
 class Help:
-    def __int__(self):
+    def __int__(self, partner):
         background = "orange"
+
+        #disable help button
+        partner.help_button.config(state=DISABLED)
 
         #sets up child window (ie: help box)
         self.help_box = Toplevel()
