@@ -19,6 +19,6 @@ print(all_calculations)
 
 print()
 
-print(*** Most Recent 3 ***)
+print("*** Most Recent 3 ***")
 for item in range(0, 3)
     print(all_calculations[item])

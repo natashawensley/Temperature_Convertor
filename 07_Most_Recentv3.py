@@ -1,9 +1,10 @@
 # Get data from user and store it in a list, then
 # display the most recent three entries nicely
-# Trial #2 - uses a deque method (no need for reverse ordering)
+# Trial #3 - prints lists in reverse order
+# (no need for extra code or importing libraries)
 
-from collections import deque
-calculations = deque
+# Set up empty list
+all_calculations = []
 
 # Get five items of Data
 for item in range(0, 5):
@@ -20,5 +21,6 @@ print(all_calculations)
 print()
 
 print("*** Most Recent 3 ***")
+# print items starting at the END of the list
 for item in range(0, 3)
-    print(all_calculations[item])
+    print(all_calculations[len(all_calculations) - item - 1])
