@@ -16,7 +16,7 @@ while has_error == "yes":
             continue
 
         elif letter == " ":
-            probelm = "(no spaces allowed"
+            probelm = "(no spaces allowed)"
 
         else:
             problem = ("(no {}'s allowed)".format(letter))
