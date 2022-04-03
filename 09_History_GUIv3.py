@@ -9,7 +9,7 @@ class Convertor:
 
     # Initialise list to hold calculation history
     # In later versions list will be populated with user calculations
-    self.all_calculations = ['0 degrees F is -17.8 degrees C',
+    self.all_calc_list = ['0 degrees F is -17.8 degrees C',
                              '0 degrees C is 32 degrees F',
                              '40 degrees C is 104 degrees F',
                              '40 degrees F is 4.4 degrees C',
@@ -30,21 +30,19 @@ class Convertor:
                                       padx=10, payd=10)
     self.temp_converter_label.grid(row=0))
 
-    # history button (row 1)
+    # History button (row 1)
     self.history_button = Button(self.converter_frame, text="History",
                               font=("Arial", "14"),
-                              padx=10, pady=10, command=self.history)
+                              padx=10, pady=10,
+                              command=lambda: self.history(self.all_calc_list))
     self.history_button.grid(row=1)
 
-    def history(self):
-        print("You asked for history")
-        get_history = history(self)
-        get_history.history_text.configure(text="History text goes here")
+    def history(self, calc_history):
+       History(self, calc_history)
 
 
-
-class history:
-    def __int__(self, partner):
+class History:
+    def __int__(self, partner, calc_history):
         background = "#a9ef99"  # Pale green
 
         #disable history button
@@ -80,6 +78,15 @@ class history:
         self.history_text.grid(row=1)
 
         # History Output goes here... (row 2)
+        history_string = ""
+            if len(calc_history) >= 7:
+            for item in range(0, 7)
+                history_string += calc_history[len(calc_history)-item-1]+"\n"
+
+                # Label to display calculation history to user
+            self.calc_label = Label(self.history_frame, text=history_string,
+                                    bg=background, font="Arial 12", justify=LEFT)
+            self.calc_label.grid(row=2)
 
         # Export / Dismiss buttons frame (row 3)
         self.export_dismiss_frame = Frame(self.history_frame)
